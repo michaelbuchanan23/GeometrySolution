@@ -5,20 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Geometry {
-	class Square {
+	class Square : Rectangle {
 
-		public double LengthOfSides { get; set; } //the get gives the value & the set will set the assignment and that is allowed because of the stuff in the {}
+		//this constrcutor reuses the constructor method from rectangle to create the square
+		public Square(int sides) : base (sides,sides){
 
-		public double GetArea() {
-			return LengthOfSides * LengthOfSides;
-			//return Math.Pow(LengthOfSides, 2); //can also use this to get the answer
-		}
-		public double GetPerimeter() {
-			return LengthOfSides * 4;
 		}
 
-		public void Print() {
-			Console.WriteLine($"A sqaure with length {LengthOfSides} has an area of {GetArea()} and a perimeter of {GetPerimeter()}");
-		}
+		public Square() { }
 	}
 }

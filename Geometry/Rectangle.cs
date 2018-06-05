@@ -5,21 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Geometry {
-	class Rectangle {
-		public double height { get; set; }
-		public double width { get; set; }
+	class Rectangle : Quadrilateral {
 
-		public double GetArea() {
-			return height * width;
+		public override int GetArea() {
+			return this.side1 * this.side2;
 		}
 
-		public double GetPerimeter() {
-			//return (height * 2) + (width * 2);
-			return 2 * (height + width); //Greg used this calculation because he said it is simpler and "simpler is better"
+		public Rectangle (int length, int width) {
+			this.side1 = length;
+			this.side2 = width;
+			this.side3 = length;
+			this.side4 = width;
 		}
 
-		public void Print () {
-			Console.WriteLine($"A rectangle with height of {height} and width of {width} has an area of {GetArea()} and a perimeter of {GetPerimeter()}");
-		}
+		public Rectangle() { }
 	}
 }
